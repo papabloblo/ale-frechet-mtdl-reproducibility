@@ -2,7 +2,7 @@
 
 This repository contains the public reproducibility package for the paper:
 
-> **Explainability-Guided Soft Parameter Sharing for Multi-Task Time-Series Prediction Using ALE--Fréchet Similarity**
+> **Explainability-Guided Soft Parameter Sharing for Multi-Task Time-Series Prediction Using ALE–Fréchet Similarity**
 
 The package is prepared for paper review and archival release. It contains the source code, experiment configurations, data-generation scripts, aggregated reference outputs, and manuscript artifacts needed to reproduce the main experiments and compare a local run against the submitted results.
 
