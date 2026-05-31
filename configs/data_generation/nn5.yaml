@@ -1,0 +1,3 @@
+dataset: nn5
+seed: 42
+max_ntasks:

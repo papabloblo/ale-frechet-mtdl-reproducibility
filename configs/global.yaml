@@ -1,0 +1,10 @@
+deterministic: true
+device: auto
+logging_dir: results
+seed: 42
+amp: false
+amp_dtype: float16
+trainer:
+  epochs: 1000
+  early_stopping_epochs: 25
+  print_each: 1

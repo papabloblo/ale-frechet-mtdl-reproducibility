@@ -1,0 +1,33 @@
+same_parameters: false
+shared_input_data: false
+weight_init: kaiming_uniform
+bias_range: 0.1
+similarity_layers: {in: soft1, out: head}
+modules:
+  - name: hard_lstm
+    shared: hard
+    layers:
+      - type: linear
+        in_features: 41
+        out_features: 128
+      - type: relu
+  - name: soft1
+    shared: soft
+    layers:
+      - type: linear
+        in_features: 128
+        out_features: 128
+      - type: relu
+  - name: soft2
+    shared: soft
+    layers:
+      - type: linear
+        in_features: 128
+        out_features: 64
+      - type: relu
+  - name: head
+    shared: null
+    layers:
+      - type: linear
+        in_features: 64
+        out_features: 1

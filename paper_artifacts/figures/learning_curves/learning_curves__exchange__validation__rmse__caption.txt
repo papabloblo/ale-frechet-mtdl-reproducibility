@@ -1,0 +1,1 @@
+Learning curves for exchange. The figure reports the epoch-wise validation RMSE for the best configuration of each method, where the selected configuration is the one that minimizes test_rmse_mean in the sweep summary. Solid lines denote the mean across seeds and shaded bands denote one standard deviation. Included methods: ALE–Fréchet, Hard, Soft, MMoE, Cross-stitch, PLE, MTAN.

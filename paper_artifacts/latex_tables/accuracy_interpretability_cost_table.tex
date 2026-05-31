@@ -1,0 +1,22 @@
+
+\begin{table*}[t]
+\centering
+\caption{Accuracy--interpretability--cost trade-off of the compared methods. Accuracy rank is based on the average TEST RMSE ranking in Table~\ref{tab:method_ranking}; runtime rank is based on total training time, where lower rank is faster.}
+\label{tab:accuracy_interpretability_cost}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccc p{6.2cm}}
+\toprule
+Method & Accuracy rank & Runtime rank & Explicit task-transfer explanation & Interpretation of the sharing mechanism \\
+\midrule
+ALE--Fr\'{e}chet & 1--2 & 7 & Yes & Task coupling is derived from ALE-profile similarity and can be inspected through similarity matrices and task-neighbor graphs. \\
+MMoE & 1--2 & 6 & Partial & Task interactions are learned through task-specific gates over shared experts, but the functional basis of each coupling remains latent. \\
+Soft sharing & 3 & 5 & No & Task-specific parameters are regularized uniformly or by fixed design rather than by an explicit learned functional task graph. \\
+Cross-stitch & 4 & 8 & Partial & Cross-task activation mixing coefficients are inspectable, but they do not directly describe functional similarity between tasks. \\
+Single-task MLP & 5 & 3 & Not applicable & Tasks are trained independently, so no cross-task transfer mechanism is learned. \\
+Hard sharing & 6 & 2 & No & All tasks share the same representation, making the amount and direction of transfer implicit and uniform. \\
+PLE & 7 & 4 & Partial & Shared and task-specific experts separate representations, but task relationships are mainly encoded in latent expert routing. \\
+MTAN & 8 & 1 & Partial & Attention masks expose task-specific feature selection over a shared backbone, but not an explicit functional task-similarity graph. \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}

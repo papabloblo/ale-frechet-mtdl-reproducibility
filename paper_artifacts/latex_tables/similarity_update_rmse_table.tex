@@ -1,0 +1,22 @@
+\begin{table*}[t]
+\centering
+\caption{Relative test RMSE for ALE--Fr\'echet similarity recomputation frequency. Rows report \texttt{similarity.update\_every}; columns report \texttt{similarity.keep\_epochs}. Values are relative to recomputing similarity every step (\texttt{update\_every=1}, \texttt{keep\_epochs=1}). Negative values indicate lower RMSE; the reference configuration is marked as baseline.}
+\label{tab:similarity_update_relative_rmse}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llcccc}
+\toprule
+Dataset & Update & Keep 1 & Keep 3 & Keep 5 & Keep 10 \\
+\midrule
+polynomial & 1 & \textit{Baseline} & -- & -- & -- \\
+ & 3 & \textbf{-0.3\%} & \textbf{-0.4\%} & -- & -- \\
+ & 5 & \textbf{-1.1\%} & \textbf{-0.4\%} & \textbf{-0.5\%} & -- \\
+ & 10 & \textbf{-2.0\%} & \textbf{-2.0\%} & \textbf{-2.0\%} & \textbf{-2.0\%} \\
+\addlinespace
+multisine & 1 & \textit{Baseline} & -- & -- & -- \\
+ & 3 & \textbf{-1.9\%} & +1.8\% & -- & -- \\
+ & 5 & \textbf{-1.0\%} & +6.3\% & +7.1\% & -- \\
+ & 10 & +2.1\% & +0.7\% & \textbf{-0.9\%} & \textbf{-1.6\%} \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}

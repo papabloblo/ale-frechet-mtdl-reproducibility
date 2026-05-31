@@ -1,0 +1,39 @@
+\begin{table*}[t]
+\centering
+\caption{Method ranking by average per-dataset rank for each reported metric. Lower average rank is better; the best-ranked method for each metric is shown in bold.}
+\label{tab:method_ranking}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrlrrr}
+\toprule
+Metric & Rank & Method & Avg. rank & Rank std. & Datasets \\
+\midrule
+TEST MAE & \textbf{1} & \textbf{ALE--Fr\'{e}chet} & \textbf{2.833} & 0.983 & 6 \\
+ & \textbf{1} & \textbf{MMoE} & \textbf{2.833} & 2.483 & 6 \\
+ & 3 & Soft & 3.167 & 2.401 & 6 \\
+ & 4 & Cross-stitch & 3.833 & 1.472 & 6 \\
+ & 5 & Single-task MLP & 4.400 & 1.517 & 5 \\
+ & 6 & Hard & 4.833 & 0.983 & 6 \\
+ & 7 & PLE & 6.000 & 2.530 & 6 \\
+ & 8 & MTAN & 7.500 & 0.837 & 6 \\
+\addlinespace
+TEST RMSE & \textbf{1} & \textbf{ALE--Fr\'{e}chet} & \textbf{2.667} & 0.816 & 6 \\
+ & \textbf{1} & \textbf{MMoE} & \textbf{2.667} & 2.582 & 6 \\
+ & 3 & Soft & 3.000 & 2.280 & 6 \\
+ & 4 & Cross-stitch & 3.833 & 1.169 & 6 \\
+ & 5 & Single-task MLP & 4.200 & 1.643 & 5 \\
+ & 6 & Hard & 4.833 & 1.472 & 6 \\
+ & 7 & PLE & 6.833 & 1.169 & 6 \\
+ & 8 & MTAN & 7.333 & 0.816 & 6 \\
+\addlinespace
+TOTAL TIME & \textbf{1} & \textbf{MTAN} & \textbf{2.333} & 2.805 & 6 \\
+ & 2 & Hard & 3.167 & 1.329 & 6 \\
+ & 3 & Single-task MLP & 3.200 & 2.775 & 5 \\
+ & 4 & PLE & 3.833 & 1.329 & 6 \\
+ & 5 & Soft & 4.333 & 2.066 & 6 \\
+ & 6 & MMoE & 5.167 & 0.753 & 6 \\
+ & 7 & ALE--Fr\'{e}chet & 6.500 & 1.871 & 6 \\
+ & 8 & Cross-stitch & 6.667 & 1.033 & 6 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}

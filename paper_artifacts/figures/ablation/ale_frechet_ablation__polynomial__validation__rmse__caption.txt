@@ -1,0 +1,1 @@
+Learning-curve ablation for ALE--Fr'echet on polynomial. Each line reports the epoch-wise validation RMSE of one ALE--Fr'echet configuration, aggregated across seeds. Configurations are ranked by test_rmse_mean, and the figure includes the top 6 settings. Solid lines denote the mean across seeds and shaded bands denote one standard deviation.

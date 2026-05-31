@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+title: "ALE--Fréchet Multi-Task Learning Reproducibility Package"
+message: "If you use this software, please cite the accompanying paper."
+type: software
+authors:
+  - family-names: Hidalgo
+    given-names: Pablo
+  - family-names: Rodriguez
+    given-names: Daniel
+  - family-names: Domínguez-Díaz
+    given-names: Adrián
+year: 2026
+license: MIT
+repository-code: "https://github.com/papabloblo/ale-frechet-mtdl-reproducibility"

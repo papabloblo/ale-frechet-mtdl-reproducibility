@@ -1,0 +1,14 @@
+name: nn5
+task_id_col: task
+target_cols: [y_target]
+feature_cols: [day,dow,month,year,is_weekend,is_month_start,is_month_end,dow_sin,dow_cos,month_sin,month_cos,y_lag_1,y_lag_7,y_lag_14,y_lag_28,day_lag_1,day_lag_7,dow_lag_1,dow_lag_7,month_lag_1,month_lag_7,year_lag_1,year_lag_7,is_weekend_lag_1,is_weekend_lag_7,is_month_start_lag_1,is_month_start_lag_7,is_month_end_lag_1,is_month_end_lag_7,dow_sin_lag_1,dow_sin_lag_7,dow_cos_lag_1,dow_cos_lag_7,month_sin_lag_1,month_sin_lag_7,month_cos_lag_1,month_cos_lag_7,y_rollmean_7,y_rollstd_7,y_rollmean_28,y_rollstd_28]
+paths:
+  train: data/interim/nn5/nn5_train.csv
+  validation: data/interim/nn5/nn5_val.csv
+  test: data/interim/nn5/nn5_test.csv
+batch:
+  train: 128
+  validation: 256
+  test: 256
+  ale: 128
+load_in_memory: false

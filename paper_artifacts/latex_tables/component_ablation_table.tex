@@ -1,0 +1,19 @@
+\begin{table*}[t]
+\centering
+\caption{Component ablation of ALE--Fr\'{e}chet. The variants test whether performance depends on learned ALE-based task similarity rather than only on generic regularized soft sharing.}
+\label{tab:component_ablation}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llrrrr}
+\toprule
+Dataset & Variant & Test RMSE & Test MAE & $\Delta$RMSE vs. full & Total time \\
+\midrule
+multisine & Full ALE--Fr\'{e}chet & 0.4666 $\pm$ 0.0731 & 0.4456 $\pm$ 0.0722 & +0.00\% & 13.9462 $\pm$ 12.9310 \\
+multisine & No similarity regularization ($\lambda=0$) & 0.5012 $\pm$ 0.0598 & 0.4821 $\pm$ 0.0567 & +7.43\% & 4.5840 $\pm$ 1.8020 \\
+multisine & Random task-neighbor graph & 0.4998 $\pm$ 0.0576 & 0.4800 $\pm$ 0.0553 & +7.12\% & 4.8931 $\pm$ 2.4167 \\
+polynomial & Full ALE--Fr\'{e}chet & 4.6904 $\pm$ 0.6529 & 4.6528 $\pm$ 0.6493 & +0.00\% & 5.4967 $\pm$ 0.2282 \\
+polynomial & No similarity regularization ($\lambda=0$) & 4.6612 $\pm$ 0.6781 & 4.6231 $\pm$ 0.6751 & -0.62\% & 5.5021 $\pm$ 3.4343 \\
+polynomial & Random task-neighbor graph & 4.6700 $\pm$ 0.6828 & 4.6316 $\pm$ 0.6801 & -0.43\% & 4.3120 $\pm$ 0.9566 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}

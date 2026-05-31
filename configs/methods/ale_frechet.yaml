@@ -1,0 +1,18 @@
+learning_type: regression
+ale:
+  n_intervals: 30
+  epsilon: 1e-4
+  n_guess: 1000
+similarity:
+  update_every: 10
+  keep_epochs: 10
+ale_update_every: 10
+optim:
+  lr: 1e-3
+regularization:
+  l2: 1.0e-2
+loss:
+  name: rmse
+errors:
+  names: [rmse, mae, mape]
+

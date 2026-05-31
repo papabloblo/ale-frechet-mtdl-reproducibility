@@ -1,0 +1,18 @@
+name: electricity
+task_id_col: task
+target_cols: [y_target]
+feature_cols: [hour,dow,month,is_weekend,hour_sin,hour_cos,month_sin,month_cos,y_day_mean,y_week_mean,y_lag_1,y_lag_24,y_lag_168,hour_lag_1,hour_lag_24,dow_lag_1,dow_lag_24,month_lag_1,month_lag_24,is_weekend_lag_1,is_weekend_lag_24,hour_sin_lag_1,hour_sin_lag_24,hour_cos_lag_1,hour_cos_lag_24,month_sin_lag_1,month_sin_lag_24,month_cos_lag_1,month_cos_lag_24,y_day_mean_lag_1,y_day_mean_lag_24,y_week_mean_lag_1,y_week_mean_lag_24,y_rollmean_24,y_rollstd_24,y_rollmean_168,y_rollstd_168]
+paths:
+  train: data/interim/electricity/electricity_train.csv
+  validation: data/interim/electricity/electricity_val.csv
+  test:  data/interim/electricity/electricity_test.csv
+batch:
+  train: 128
+  validation: 256
+  test: 256
+  ale: 128
+#rows_read:
+#  train: 1000000
+#  validation: 1000000
+#  test: 1000000
+#load_in_memory: false

@@ -1,0 +1,24 @@
+# Component ablation for ALE--Frechet.
+#
+# This sweep isolates whether performance comes from learned ALE-based task
+# similarity or from generic regularized soft sharing.
+
+baselines: ['ale_frechet']
+seeds: [0, 1, 2, 3, 4]
+
+component_ablation:
+  variant: ['full', 'no_similarity', 'random_graph']
+  random_seed: [0]
+
+similarity:
+  update_every: [10]
+  keep_epochs: [5]
+
+regularization:
+  l2: [1e-2]
+
+optim:
+  lr: [1e-3]
+
+constraints:
+  tie_ale_and_similarity_updates: true

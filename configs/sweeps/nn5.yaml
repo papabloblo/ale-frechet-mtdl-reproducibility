@@ -1,0 +1,11 @@
+baselines: ['ale_frechet', 'single_task_mlp', 'hard', 'soft', 'mmoe', 'crossstitch', 'ple', 'mtan']
+seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+similarity:
+  update_every: [10]
+  keep_epochs: [1, 3, 5, 10]
+regularization:
+  l2: [1e-2]
+optim:
+  lr: [1e-3]
+constraints:
+  tie_ale_and_similarity_updates: true

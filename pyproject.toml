@@ -1,0 +1,158 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "ale-frechet-mtdl-reproducibility"
+version = "1.0.0"
+description = "Reproducibility package for ALE-Fréchet multi-task time-series prediction experiments."
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+license = "MIT"
+
+authors = [
+    { name = "Pablo Hidalgo" },
+    { name = "Daniel Rodriguez" },
+    { name = "Adrián Domínguez-Díaz" }
+]
+
+maintainers = [
+    { name = "Pablo Hidalgo" }
+]
+
+keywords = [
+    "multi-task learning",
+    "deep learning",
+    "time-series prediction",
+    "explainable artificial intelligence",
+    "accumulated local effects",
+    "frechet distance",
+    "soft parameter sharing",
+    "reproducibility"
+]
+
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: POSIX :: Linux"
+]
+
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "scipy>=1.10",
+    "scikit-learn>=1.2",
+    "matplotlib>=3.7",
+    "seaborn>=0.12",
+    "pyyaml>=6.0",
+    "tqdm>=4.65",
+    "joblib>=1.2"
+]
+
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "ruff>=0.4",
+    "black>=24.0",
+    "mypy>=1.8",
+    "build>=1.0",
+    "twine>=5.0"
+]
+
+notebooks = [
+    "jupyter>=1.0",
+    "ipykernel>=6.0"
+]
+
+docs = [
+    "mkdocs>=1.5",
+    "mkdocs-material>=9.0"
+]
+
+
+[project.urls]
+Homepage = "https://github.com/<user>/ale-frechet-mtdl-reproducibility"
+Repository = "https://github.com/<user>/ale-frechet-mtdl-reproducibility"
+Issues = "https://github.com/<user>/ale-frechet-mtdl-reproducibility/issues"
+Paper = "https://doi.org/<replace-with-paper-doi-when-available>"
+
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+include-package-data = true
+
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+
+[tool.setuptools.package-data]
+"*" = ["*.yaml", "*.yml", "*.json", "*.txt"]
+
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
+addopts = [
+    "-ra",
+    "--strict-markers",
+    "--strict-config"
+]
+
+
+[tool.coverage.run]
+source = ["src"]
+branch = true
+
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
+
+
+[tool.ruff]
+target-version = "py310"
+line-length = 88
+src = ["src", "scripts", "tests"]
+
+
+[tool.ruff.lint]
+select = [
+    "E",      # pycodestyle errors
+    "F",      # pyflakes
+    "I",      # import sorting
+    "B",      # bugbear
+    "UP",     # pyupgrade
+    "SIM"     # simplification
+]
+ignore = [
+    "E501"    # line length handled by formatter / readability decisions
+]
+
+
+[tool.ruff.lint.per-file-ignores]
+"scripts/*.py" = ["B008"]
+"tests/*.py" = ["S101"]
+
+
+[tool.black]
+line-length = 88
+target-version = ["py310", "py311", "py312"]
+
+
+[tool.mypy]
+python_version = "3.10"
+warn_unused_configs = true
+ignore_missing_imports = true
+check_untyped_defs = false
+disallow_untyped_defs = false

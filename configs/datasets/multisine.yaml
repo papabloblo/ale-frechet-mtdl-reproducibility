@@ -1,0 +1,13 @@
+name: multisine
+task_id_col: task
+target_cols: [y_target]
+feature_cols: [x, x_sin, x_cos, y_lag_1,y_lag_10,y_lag_50,x_lag_1,x_sin_lag_1,x_cos_lag_1,y_rollmean_10,y_rollstd_10,y_rollmean_50,y_rollstd_50]
+paths:
+  train: data/interim/multisine/multisine_train.csv
+  validation: data/interim/multisine/multisine_val.csv
+  test:  data/interim/multisine/multisine_test.csv
+batch:
+  train: 256
+  validation: 512
+  test: 512
+  ale: 512

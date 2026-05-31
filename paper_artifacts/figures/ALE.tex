@@ -1,0 +1,96 @@
+\begin{tikzpicture}[font=\small, node distance=12mm and 18mm]
+
+% Column x positions (for neat horizontal layout)
+\coordinate (col1) at (0,0);
+\coordinate (col2) at (2.25,0);  % first backbone layer
+\coordinate (col3) at (8.10,0);  % similarity module centers
+\coordinate (col5) at (13.8,0);  % task-specific layers (right)
+
+% Row y position (single task)
+\coordinate (rowA) at (0,0);
+
+% ---------- Column 1: input dataset ----------
+\node[data] (dA) at ($(col1)+(rowA)$) {$X$};
+
+% ---------- Column 2: first backbone layer ----------
+\node[back, minimum width=2.5cm, minimum height=2.5cm,
+      label={[CFrame]below: Input Module}] (bA) at ($(col2)+(rowA)$) {$\mathbf{f}^{(\mathrm{in})}_t$};
+\draw[arrow] (dA) -- (bA);
+
+% ---------- Similarity Module ----------
+\node[sim, minimum width=2.5cm, minimum height=2.5cm,
+      label={[CFrame]below: Similarity Module}] (simA) at ($(col3)+(rowA)$) {$\mathbf{f}^{(\mathrm{sim})}_t$};
+
+% ---------- Input feature circles (OUTSIDE, to the LEFT of the module) ----------
+\foreach \i/\lab in {1/$h_{t,1}^{(in)}$,2/$h_{t,2}^{(in)}$,3/$h_{t,3}^{(in)}$}{
+  \node[fcin] (Ain\i) at ($(simA.west)+(-1.2,2.4-1.2*\i)$) {\scriptsize \lab};
+}
+
+% Connect backbone -> EACH input circle
+\foreach \i in {1,2,3}{
+  \draw[arrow] (bA.east) -- ($(Ain\i.west)+(-0.25,0)$) -- (Ain\i.west);
+}
+
+% Horizontal arrows from all input circles to the similarity module
+\foreach \i in {1,2,3}{
+  \draw[-{Latex[length=1.6mm]}, CFrame, thick] 
+      (Ain\i.east) -- ($(simA.west)+(0,1.5-0.8*\i)$);
+}
+
+% ---------- Output feature circles (OUTSIDE, to the RIGHT of the module) ----------
+\node[fcout] (Aout1) at ($(simA.east)+(1.2,0.7)$) {\scriptsize $h_{t,1}^{(sim)}$};
+\node[fcout] (Aout2) at ($(simA.east)+(1.2,-0.7)$) {\scriptsize $h_{t,2}^{(sim)}$};
+
+% Arrows from module to EACH output circle
+\draw[-{Latex[length=1.6mm]}, CFrame] ($(simA.east)+(0,0.70)$) -- (Aout1.west);
+\draw[-{Latex[length=1.6mm]}, CFrame] ($(simA.east)+(0,-0.70)$) -- (Aout2.west);
+
+% ---------- Column 5: task-specific layers ----------
+\node[back, minimum width=2.5cm, minimum height=2.5cm,
+      label={[CFrame]below: Output Module}] (hA) at ($(col5)+(rowA)$) {$\mathbf{f}^{(\mathrm{out})}_t$};
+
+% Connect EACH output circle -> task-specific layers
+\draw[arrow] (Aout1.east) -- (hA.west);
+\draw[arrow] (Aout2.east) -- (hA.west);
+
+% ---------- ALE explainer box with top label (ABOVE THE FIGURE) ----------
+\node[
+  draw=CFrame,
+  rounded corners=6pt,
+  fill=white,
+  align=left,
+  inner sep=6pt,
+  minimum width=3.0cm,
+  minimum height=2.8cm,
+  above=10mm of simA,
+  label={[CFrame]above:\textbf{ALE for $(j_1 \rightarrow k_1)$}}
+] (aleBox) {};
+
+% ---- ALE axes and curve (clipped to stay inside the axes) ----
+\path (aleBox.south west) ++(0.55,0.55) coordinate (ax0);
+\def\aleW{2.4}   % x-axis length
+\def\aleH{1.4}   % y-axis length
+
+% Axes
+\draw[->, thin] (ax0) -- ++(0,\aleH) node[above] {\scriptsize $h_{t,1}^{(sim)}$};
+\draw[->, thin] (ax0) -- ++(\aleW,0) node[right] {\scriptsize $h_{t,1}^{(in)}$};
+
+% Clip region = axes box
+\begin{scope}
+  \clip (ax0) rectangle ($(ax0)+(\aleW,\aleH)$);
+  % ALE curve (clipped inside axes)
+  \draw[CFrame, thick]
+    ($(ax0)+(0.10,0.20)$)
+    .. controls +(0.60,0.60) and +(-0.40,0.20) ..
+    ($(ax0)+(1.20,1.00)$)
+    .. controls +(0.40,-0.30) and +(0.15,0.35) ..
+    ($(ax0)+(2.30,0.65)$);
+\end{scope}
+
+% Dashed pointers from selected pair (Ain1, Aout1) up to the ALE explainer
+\draw[densely dashed, CFrame, -{Latex[length=1.2mm]}]
+  (Ain1.north) |- ($(aleBox.west)$);
+\draw[densely dashed, CFrame, -{Latex[length=1.2mm]}]
+  (Aout1.north) |- ($(aleBox.east)$);
+
+\end{tikzpicture}

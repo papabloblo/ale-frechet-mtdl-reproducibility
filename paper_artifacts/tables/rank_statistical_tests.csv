@@ -1,0 +1,7 @@
+metric,friedman_chi2,friedman_p,friedman_n_datasets,friedman_n_methods,target_method,target_avg_rank,competitor_method,competitor_avg_rank,wilcoxon_w,wilcoxon_p,pair_n_datasets,ale_wins,ties,ale_losses,median_rank_delta,paired_datasets,wilcoxon_p_holm
+test_rmse,24.53333333333333,0.0009176887495205369,5,8,ale_frechet,2.6666666666666665,mmoe,2.6666666666666665,10.0,1.0,6,2,0,4,1.0,"electricity,exchange,metrla,multisine,nn5,polynomial",1.0
+test_rmse,24.53333333333333,0.0009176887495205369,5,8,ale_frechet,2.6666666666666665,soft,3.0,9.0,0.84375,6,3,0,3,0.0,"electricity,exchange,metrla,multisine,nn5,polynomial",1.0
+test_rmse,24.53333333333333,0.0009176887495205369,5,8,ale_frechet,2.6666666666666665,crossstitch,3.8333333333333335,4.0,0.21875,6,5,0,1,-1.5,"electricity,exchange,metrla,multisine,nn5,polynomial",0.65625
+test_mae,23.933333333333337,0.0011705015581161397,5,8,ale_frechet,2.8333333333333335,mmoe,2.8333333333333335,10.0,1.0,6,2,0,4,1.0,"electricity,exchange,metrla,multisine,nn5,polynomial",1.0
+test_mae,23.933333333333337,0.0011705015581161397,5,8,ale_frechet,2.8333333333333335,soft,3.1666666666666665,9.0,0.90625,6,3,0,3,0.0,"electricity,exchange,metrla,multisine,nn5,polynomial",1.0
+test_mae,23.933333333333337,0.0011705015581161397,5,8,ale_frechet,2.8333333333333335,crossstitch,3.8333333333333335,4.5,0.28125,6,5,0,1,-1.0,"electricity,exchange,metrla,multisine,nn5,polynomial",0.84375

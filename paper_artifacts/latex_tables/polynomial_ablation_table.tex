@@ -1,0 +1,23 @@
+\begin{table*}[t]
+\centering
+\caption{Top ALE--Fr\'echet ablation configurations for polynomial. Rows are ranked by val\_rmse\_mean; best and second-best values within each reported metric are highlighted.}
+\label{tab:ablation_polynomial}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccccc}
+\toprule
+Rank & Combo & LR & L2 & Keep & Update & TEST RMSE & TEST MAE & TOTAL TIME \\
+\midrule
+1 & 50 & 0.001 & 0.001 & 3 & 10 & \textbf{4.6860 $\pm$ 0.8493} & \textbf{4.6480 $\pm$ 0.8456} & 5.8075 $\pm$ 2.0203 \\
+2 & 56 & 0.001 & 0.001 & 5 & 10 & 4.6908 $\pm$ 0.8483 & 4.6531 $\pm$ 0.8446 & \underline{5.6598 $\pm$ 1.4927} \\
+3 & 62 & 0.001 & 0.001 & 10 & 10 & 4.6927 $\pm$ 0.8470 & 4.6549 $\pm$ 0.8433 & 5.7122 $\pm$ 1.3452 \\
+4 & 48 & 0.001 & 0.01 & 3 & 10 & \underline{4.6863 $\pm$ 0.8510} & \underline{4.6481 $\pm$ 0.8475} & \textbf{5.2488 $\pm$ 1.2264} \\
+5 & 54 & 0.001 & 0.01 & 5 & 10 & 4.7015 $\pm$ 0.8396 & 4.6636 $\pm$ 0.8358 & 5.9289 $\pm$ 3.4898 \\
+6 & 60 & 0.001 & 0.01 & 10 & 10 & 4.7013 $\pm$ 0.8396 & 4.6635 $\pm$ 0.8358 & 6.1143 $\pm$ 3.6945 \\
+7 & 52 & 0.001 & 0.1 & 5 & 10 & 4.7083 $\pm$ 0.8367 & 4.6704 $\pm$ 0.8329 & 7.8106 $\pm$ 9.4563 \\
+8 & 46 & 0.001 & 0.1 & 3 & 10 & 4.7110 $\pm$ 0.8357 & 4.6731 $\pm$ 0.8320 & 6.3591 $\pm$ 5.2106 \\
+9 & 58 & 0.001 & 0.1 & 10 & 10 & 4.7129 $\pm$ 0.8351 & 4.6749 $\pm$ 0.8314 & 7.6318 $\pm$ 8.3327 \\
+10 & 11 & 0.01 & 0.01 & 1 & 3 & 4.7551 $\pm$ 0.8251 & 4.7157 $\pm$ 0.8224 & 6.1860 $\pm$ 1.9912 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}

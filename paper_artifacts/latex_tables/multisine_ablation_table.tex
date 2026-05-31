@@ -1,0 +1,23 @@
+\begin{table*}[t]
+\centering
+\caption{Top ALE--Fr\'echet ablation configurations for multisine. Rows are ranked by val\_rmse\_mean; best and second-best values within each reported metric are highlighted.}
+\label{tab:ablation_multisine}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccccc}
+\toprule
+Rank & Combo & LR & L2 & Keep & Update & TEST RMSE & TEST MAE & TOTAL TIME \\
+\midrule
+1 & 41 & 0.01 & 0.01 & 1 & 10 & 0.4750 $\pm$ 0.0792 & 0.4521 $\pm$ 0.0800 & 9.5078 $\pm$ 3.2832 \\
+2 & 39 & 0.01 & 0.1 & 1 & 10 & 0.4744 $\pm$ 0.0936 & 0.4532 $\pm$ 0.0938 & 9.2453 $\pm$ 2.4833 \\
+3 & 43 & 0.01 & 0.001 & 1 & 10 & 0.4644 $\pm$ 0.0869 & 0.4430 $\pm$ 0.0885 & \textbf{7.0928 $\pm$ 1.6606} \\
+4 & 45 & 0.01 & 0.1 & 3 & 10 & \textbf{0.4596 $\pm$ 0.1215} & \textbf{0.4375 $\pm$ 0.1221} & 10.8883 $\pm$ 5.5810 \\
+5 & 51 & 0.01 & 0.1 & 5 & 10 & \underline{0.4631 $\pm$ 0.1226} & \underline{0.4421 $\pm$ 0.1228} & 9.8606 $\pm$ 3.2976 \\
+6 & 11 & 0.01 & 0.01 & 1 & 3 & 0.4818 $\pm$ 0.0716 & 0.4591 $\pm$ 0.0725 & 8.4205 $\pm$ 2.6435 \\
+7 & 21 & 0.01 & 0.1 & 1 & 5 & 0.4680 $\pm$ 0.1176 & 0.4464 $\pm$ 0.1177 & 8.6841 $\pm$ 1.1755 \\
+8 & 47 & 0.01 & 0.01 & 3 & 10 & 0.4758 $\pm$ 0.0752 & 0.4544 $\pm$ 0.0756 & 10.1747 $\pm$ 3.6803 \\
+9 & 9 & 0.01 & 0.1 & 1 & 3 & 0.4637 $\pm$ 0.0679 & 0.4422 $\pm$ 0.0681 & \underline{7.9188 $\pm$ 3.6057} \\
+10 & 50 & 0.001 & 0.001 & 3 & 10 & 0.5066 $\pm$ 0.0712 & 0.4860 $\pm$ 0.0708 & 9.2864 $\pm$ 3.3812 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}

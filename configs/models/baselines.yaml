@@ -1,0 +1,36 @@
+# Default hyperparameters for baseline MTL models (used by scripts/train_compare_methods.py)
+
+# Common
+activation: relu
+dropout: 0.0
+
+# SoftSharing
+soft_hidden: [128, 128]
+soft_l2: 1e-2
+
+# Single-task MLP
+single_task_hidden: [128, 128]
+
+# HardSharing
+hard_trunk: [128, 128]
+hard_head: [64]
+
+# MMoE
+n_experts: 8
+expert_hidden: [128]
+tower_hidden: [64]
+
+# CrossStitch
+shared_dims: [128, 128]
+init_identity: true
+
+# PLE (Progressive Layered Extraction / CGC)
+ple_layers: 2
+ple_shared_experts: 4
+ple_task_experts: 2
+ple_expert_hidden: [128]
+ple_tower_hidden: [64]
+
+# MTAN (Multi-Task Attention Network)
+mtan_shared_dims: [128, 128]
+mtan_tower_hidden: [64]
