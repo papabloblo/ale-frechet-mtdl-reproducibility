@@ -462,6 +462,7 @@ class MultiTaskALE:
             If `num_intervals < 1`.
         """
 
+        # TODO: Support ALE for intermediate similarity layers and not for a single output layer only.
         self.model = model
         self.dataloader = dataloader
         self.n_tasks = int(n_tasks)

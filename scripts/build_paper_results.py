@@ -587,9 +587,9 @@ def build_method_ranking_latex_table(
     lines.append(rf"\caption{{{caption}}}")
     lines.append(rf"\label{{{label}}}")
     lines.append(r"\resizebox{\textwidth}{!}{%")
-    lines.append(r"\begin{tabular}{lrlrrr}")
+    lines.append(r"\begin{tabular}{lrlrr}")
     lines.append(r"\toprule")
-    lines.append(r"Metric & Rank & Method & Avg. rank & Rank std. & Datasets \\")
+    lines.append(r"Metric & Rank & Method & Avg. rank & Rank std. \\")
     lines.append(r"\midrule")
 
     for metric, sub in work.groupby("metric", sort=False):
@@ -599,7 +599,6 @@ def build_method_ranking_latex_table(
             method = display_method_name(row["method"])
             avg_rank = format_stat_value(row["avg_rank"], decimals=decimals)
             std_rank = format_stat_value(row["std_rank"], decimals=decimals)
-            n_datasets = str(int(row["n_datasets"])) if pd.notna(row["n_datasets"]) else "--"
 
             if pd.notna(row["method_rank"]) and int(row["method_rank"]) == 1:
                 rank_value = r"\textbf{" + rank_value + "}"
@@ -610,7 +609,7 @@ def build_method_ranking_latex_table(
             first_metric_row = False
 
             lines.append(
-                " & ".join([metric_cell, rank_value, method, avg_rank, std_rank, n_datasets])
+                " & ".join([metric_cell, rank_value, method, avg_rank, std_rank])
                 + r" \\"
             )
         lines.append(r"\addlinespace")

@@ -3,7 +3,6 @@
 
 baselines: ['ale_frechet', 'single_task_mlp', 'hard', 'soft', 'mmoe', 'crossstitch', 'ple', 'mtan']
 seeds: [0, 1, 2, 3, 4]
-#seeds: [0, 1]
 similarity:
   update_every: [null, 10]
   keep_epochs: [null, 10]

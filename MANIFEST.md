@@ -20,6 +20,8 @@ Source repository: generated from the private development repository associated 
 - docs/hardware.md
 - docs/reproduction_instructions.md
 - .gitignore
+- .idea
+- .idea/workspace.xml
 - LICENSE
 - LICENSE-DOCS.md
 - Makefile
