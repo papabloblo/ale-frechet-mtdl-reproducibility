@@ -186,16 +186,37 @@ make compare-to-published       # Restore, rebuild paper CSVs/tables, and valida
 
 ## Citation
 
-If you use this package, cite the accompanying paper submitted to *Knowledge-Based Systems*. Replace the placeholder BibTeX below with the final accepted citation when available:
+If you use this repository, please cite the accompanying manuscript and the archived software release.
+
+### Manuscript
+
+The accompanying manuscript is currently under review. Until the final bibliographic information is available, please cite it as:
 
 ```bibtex
-@article{ale_frechet_mtdl_2026,
-  title   = {Explainability-Guided Soft Parameter Sharing for Multi-Task Time-Series Prediction Using ALE--Frechet Similarity},
-  journal = {Knowledge-Based Systems},
-  year    = {2026},
-  note    = {Submitted}
+@unpublished{hidalgo_ale_frechet_mtdl_2026,
+  title  = {Explainability-Guided Soft Parameter Sharing for Multi-Task Time-Series Prediction Using ALE--Fréchet Similarity},
+  author = {Hidalgo, Pablo and Rodriguez, Daniel and Domínguez-Díaz, Adrián},
+  note   = {Manuscript submitted for publication},
+  year   = {2026}
 }
 ```
+
+### Reproducibility package
+
+Please also cite the archived version of this repository:
+
+```bibtex
+@software{hidalgo_ale_frechet_reproducibility_2026,
+  title   = {ALE--Fréchet Multi-Task Learning Reproducibility Package},
+  author  = {Hidalgo, Pablo and Rodriguez, Daniel and Domínguez-Díaz, Adrián},
+  year    = {2026},
+  version = {v1.0},
+  doi = {value},
+  url     = {https://github.com/papabloblo/ale-frechet-mtdl-reproducibility}
+}
+```
+
+Once the paper is accepted or publicly available, this section will be updated with the final journal citation and DOI.
 
 ## License
 
