@@ -213,7 +213,7 @@ Please also cite the archived version of this repository:
   author  = {Hidalgo, Pablo and Rodriguez, Daniel and Domínguez-Díaz, Adrián},
   year    = {2026},
   version = {v1.0},
-  doi = {value},
+  doi = {https://doi.org/10.5281/zenodo.20688787},
   url     = {https://github.com/papabloblo/ale-frechet-mtdl-reproducibility}
 }
 ```
