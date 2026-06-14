@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20688787.svg)](https://doi.org/10.5281/zenodo.20688787)
+
 # ALE--Fréchet Multi-Task Learning Reproducibility Package
 
 This repository contains the public reproducibility package for the paper:
